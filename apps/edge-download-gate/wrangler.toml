@@ -1,16 +1,16 @@
-name = "edge-download-gate"
+name = "hendy-edge-download-gate"
 main = "src/index.ts"
-compatibility_date = "2024-04-01"
+compatibility_date = "2024-05-01"
 
 [[d1_databases]]
 binding = "DB"
 database_name = "hendy_store_d1"
-database_id = "your-d1-database-id"
+database_id = "YOUR_D1_DATABASE_ID"
 
 [[kv_namespaces]]
 binding = "DOWNLOAD_KV"
-id = "your-kv-namespace-id"
+id = "YOUR_KV_NAMESPACE_ID"
 
 [[r2_buckets]]
-binding = "R2_BUCKET"
+binding = "FILES_BUCKET"
 bucket_name = "hendy-store-files"

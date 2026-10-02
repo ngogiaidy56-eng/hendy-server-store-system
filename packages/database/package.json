@@ -1,12 +1,4 @@
 {
   "name": "@hendy/database",
-  "version": "1.0.0",
-  "main": "src/schema/postgres.schema.ts",
-  "dependencies": {
-    "drizzle-orm": "^0.30.0",
-    "pg": "^8.11.0"
-  },
-  "devDependencies": {
-    "drizzle-kit": "^0.20.0"
-  }
+  "version": "1.0.0"
 }

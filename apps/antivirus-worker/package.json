@@ -1,0 +1,7 @@
+{
+  "name": "@hendy/antivirus-worker",
+  "version": "1.0.0",
+  "scripts": {
+    "start": "tsx src/worker.ts"
+  }
+}
