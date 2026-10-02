@@ -1,4 +1,10 @@
-2 | pnpm install
-3 | 
-4 | # 2. Kiểm tra xem git đã nhận di ...
-5 | git status
+# 1. Cài đặt lại dependencies để pnpm tạo file pnpm-lock.yaml ở root
+pnpm install
+
+# 2. Kiểm tra xem git đã nhận diện pnpm-lock.yaml chưa
+git status
+
+# 3. Commit và push pnpm-lock.yaml lên repository
+git add pnpm-lock.yaml
+git commit -m "fix: add pnpm-lock.yaml to fix CI build"
+git push origin main
