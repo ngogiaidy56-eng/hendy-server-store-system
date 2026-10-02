@@ -1,0 +1,12 @@
+{
+  "name": "@hendy/antivirus-worker",
+  "version": "1.0.0",
+  "private": true,
+  "scripts": {
+    "start": "ts-node src/worker.ts"
+  },
+  "dependencies": {
+    "bullmq": "^5.7.0",
+    "clamscan": "^2.2.0"
+  }
+}

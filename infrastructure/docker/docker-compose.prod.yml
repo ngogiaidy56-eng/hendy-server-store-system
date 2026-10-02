@@ -1,0 +1,50 @@
+version: '3.8'
+
+services:
+  postgres:
+    image: postgres:16-alpine
+    container_name: hendy_postgres
+    environment:
+      POSTGRES_DB: hendy_store
+      POSTGRES_USER: hendy_admin
+      POSTGRES_PASSWORD: hendy_secure_password
+    volumes:
+      - postgres_data:/var/lib/postgresql/data
+    ports:
+      - "5432:5432"
+    restart: always
+
+  redis:
+    image: redis:7.2-alpine
+    container_name: hendy_redis
+    command: redis-server --appendonly yes
+    volumes:
+      - redis_data:/data
+    ports:
+      - "6379:6379"
+    restart: always
+
+  elasticsearch:
+    image: docker.elastic.co/elasticsearch/elasticsearch:8.12.0
+    container_name: hendy_elasticsearch
+    environment:
+      - discovery.type=single-node
+      - xpack.security.enabled=false
+      - "ES_JAVA_OPTS=-Xms512m -Xmx512m"
+    volumes:
+      - es_data:/usr/share/elasticsearch/data
+    ports:
+      - "9200:9200"
+    restart: always
+
+  clamav:
+    image: clamav/clamav:latest
+    container_name: hendy_clamav
+    ports:
+      - "3310:3310"
+    restart: always
+
+volumes:
+  postgres_data:
+  redis_data:
+  es_data:
